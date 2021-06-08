@@ -1,5 +1,5 @@
 # Underwater-Rover
-Overview:
+#Overview:
 The Underwater Rover was my Capstone project for my Computer Engineering Technology Diploma. 
 
 I designed the electronics and software for the rover, while students from the Innovative Manufacturing program at Sask Polytech created the chassis, suspension, and tracks.
@@ -7,11 +7,11 @@ I designed the electronics and software for the rover, while students from the I
 This project includes a rover to explore underwater, a base station on land containing the Raspberry Pi, and tether cables to connect the rover to the base station.
 
 
-Operation:
+#Operation:
 The operator will begin by connecting their phone or tablet to the Raspberry Pi’s wireless network. An internet connection is not required. The operator will then open a web browser and access the web page. From the web page, the operator can view the webcam stream, move the rover, rotate the webcam, toggle the flashlight, take pictures, and shut down the Raspberry Pi.
 
 
-Hardware:
+#Hardware:
 -Selected Raspberry Pi to run software and control the electronics
 -Selected CAT6 cables to connect electronics in rover to electronics in base station
 Selected battery to power electronics in rover
@@ -22,7 +22,7 @@ Selected battery to power electronics in rover
 -Soldered all components to PCB
 
 
-Software:
+#Software:
 -Developed Python program
     -Flask framework
     -Stream camera to web page
