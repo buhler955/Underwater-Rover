@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Underwater Rover</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../static/style.css"/>
+    </head>
+    <body>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript"> 
+        $(function() {
+            $('a#p').on('mousedown', function() {
+                $.getJSON('/toggle_power',
+                    function(data) {
+                }); 
+                return false; 
+            }); 
+        });
+	
+	$(function() {
+            $('a#pi').on('mousedown', function() {
+		if (confirm("Are you sure you want to shut down?")) {
+		    $.getJSON('/pi_power',
+		        function(data) {
+		    }); 
+		    return false;
+		} 
+            }); 
+        });
+
+        $(function() {
+            $('a#li').on('mousedown', function() {
+                $.getJSON('/toggle_light',
+                    function(data) {
+                }); 
+                return false; 
+            }); 
+        });
+
+        $(function() {
+            $('a#pic').on('mousedown', function() {
+                $.getJSON('/save_picture',
+                    function(data) {
+                }); 
+                return false; 
+            }); 
+        });
+
+        $(function() {
+            $('a#f').on('touchstart', function() {
+                $.getJSON('/move_forward',
+                    function(data) {
+                }); 
+                return false; 
+            }).on('touchend', function() {
+                $.getJSON('/stop',
+                    function(data) {
+                }); 
+                return false; 
+            });
+        });
+
+        $(function() {
+            $('a#re').on('touchstart', function() {
+                $.getJSON('/move_reverse',
+                    function(data) {
+                }); 
+                return false; 
+            }).on('touchend', function() {
+                $.getJSON('/stop',
+                    function(data) {
+                }); 
+                return false;
+            }); 
+        });
+
+        $(function() {
+            $('a#l').on('touchstart', function() {
+                $.getJSON('/move_left',
+                    function(data) {
+                }); 
+                return false;
+            }).on('touchend', function() {
+                $.getJSON('/stop',
+                    function(data) {
+                }); 
+                return false; 
+            }); 
+        });
+
+        $(function() {
+            $('a#r').on('touchstart', function() {
+                $.getJSON('/move_right',
+                    function(data) {
+                }); 
+                return false;
+            }).on('touchend', function() {
+                $.getJSON('/stop',
+                    function(data) {
+                }); 
+                return false; 
+            }); 
+        });
+
+        $(function() {
+            $('a#s').on('touchstart', function() {
+                $.getJSON('/stop',
+                    function(data) {
+                }); 
+                return false; 
+            }).on('touchend', function() {
+                $.getJSON('/stop',
+                    function(data) {
+                }); 
+                return false;
+            }); 
+        });
+
+        $(function() {
+            $('a#cl').on('mousedown', function() {
+                $.getJSON('/cam_left',
+                    function(data) {
+                }); 
+                return false; 
+            }); 
+        });
+
+        $(function() {
+            $('a#cr').on('mousedown', function() {
+                $.getJSON('/cam_right',
+                    function(data) {
+                }); 
+                return false; 
+            }); 
+        });
+    </script>
+    <form>
+	{% if drive == True %}
+	    <a href='#' id=pic><img src="../static/cam.png" alt="Pic" id="pic"></a>
+	{% endif %}
+        <a href='#' id=pi><img src="../static/pi.png" alt="Pi_Power" id="pi"></a>
+        <a href='#' id=p><img src="../static/power.png" alt="Power" id="power"></a>
+	<a href='#' id=li><img src="../static/light.png" alt="Light" id="light"></a> 
+        <a href='#' id=f><img src="../static/arrow.png" alt="Forward" id="forward"></a>
+        <a href='#' id=re><img src="../static/arrow.png" alt="Reverse" id="reverse"></a>
+        <a href='#' id=l><img src="../static/arrow.png" alt="Left" id="left"></a>
+        <a href='#' id=r><img src="../static/arrow.png" alt="Right" id="right"></a>
+        <a href='#' id=s><img src="../static/circle.png" alt="Stop" id="stop"></a>
+        <a href='#' id=cl><img src="../static/arrow.png" alt="Cam_Left" id="camleft"></a>
+        <a href='#' id=cr><img src="../static/arrow.png" alt="Cam_Right" id="camright"></a>
+    </form>	
+    <h3><img src="{{ url_for('video_feed') }}" class="stream"/></h3>  
+    </body>
+</html>
