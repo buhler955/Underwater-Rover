@@ -8,7 +8,7 @@ This project includes a rover to explore underwater, a base station on land cont
 
 
 # Operation:
-The operator will begin by connecting their phone or tablet to the Raspberry Pi’s wireless network. An internet connection is not required. The operator will then open a web browser and access the web page. From the web page, the operator can view the webcam stream, move the rover, rotate the webcam, toggle the flashlight, take pictures, and shut down the Raspberry Pi.
+The operator will begin by flipping the killswitch on for the battery in the rover and turning on the battery bank for the Raspberry Pi. All of the required software runs at boot on the Raspberry Pi. Then the operator connects their phone or tablet to the Raspberry Pi’s wireless network. An internet connection is not required. The operator will then open a web browser and access the web page. From the web page, the operator can view the webcam stream, move the rover, rotate the webcam, toggle the flashlight, take pictures, and shut down the Raspberry Pi.
 
 
 # Hardware:
